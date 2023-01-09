@@ -10,6 +10,9 @@ namespace cpp_config_tool {
       public:
         Class(){
         };
+        ~Class(){
+            this->db.clear();
+        };
         std::string get (const std::string name){
             return this->db[name];
         };
@@ -17,8 +20,8 @@ namespace cpp_config_tool {
             return std::stoi(this->db[name]);
         };
         void set (
-            const std::string name,
-            const std::string val
+          const std::string name,
+          const std::string val
         ){
             this->db[name] = val;
         };
@@ -40,16 +43,12 @@ namespace cppConfig{
           val
         );
     };
-    std::string get (
-      const std::string name
-    ){
+    std::string get (const std::string name){
         return cpp_config_sec::conf->get(
           name
         );
     };
-    int getInt (
-      const std::string name
-    ){
+    int getInt (const std::string name){
         return cpp_config_sec::conf->getInt(
           name
         );
