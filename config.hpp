@@ -43,6 +43,16 @@ namespace cppConfig{
           val
         );
     };
+    void map (
+        std::map<std::string, std::string> map_
+    ){
+        for(auto const & [name, val] : map_){
+            cpp_config_sec::conf->set(
+                name,
+                val
+            );
+        }
+    };
     std::string get (const std::string name){
         return cpp_config_sec::conf->get(
           name
