@@ -11,7 +11,7 @@ TEST_CASE("simple test") {
         CHECK(cppConfig::get("one") == "1");
     };
     SUBCASE("get string with default") {
-        CHECK(cppConfig::get("one", 2) == "1");
+        CHECK(cppConfig::get("one", "2") == "1");
     };
     SUBCASE("get string not exist") {
         CHECK(cppConfig::get("not exist") == "");

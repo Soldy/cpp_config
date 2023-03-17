@@ -16,7 +16,19 @@ namespace cpp_config_tool {
         std::string get (const std::string name){
             return this->db[name];
         };
+        std::string get (const std::string name, std::string def){
+            if(this->db[name] == "")
+               return def;
+            return this->db[name];
+        };
         int getInt (const std::string name){
+            if(this->db[name] == "")
+               return 0;
+            return std::stoi(this->db[name]);
+        };
+        int getInt (const std::string name, const int def){
+            if(this->db[name] == "")
+               return def;
             return std::stoi(this->db[name]);
         };
         void set (
@@ -58,9 +70,21 @@ namespace cppConfig{
           name
         );
     };
+    std::string get (const std::string name, std::string def){
+        return cpp_config_sec::conf->get(
+          name,
+          def
+        );
+    };
     int getInt (const std::string name){
         return cpp_config_sec::conf->getInt(
           name
+        );
+    };
+    int getInt (const std::string name, int def){
+        return cpp_config_sec::conf->getInt(
+          name,
+          def
         );
     };
 };
