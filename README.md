@@ -7,9 +7,7 @@ This is a simple config manager class for small projects.
 ## def  
 define config variable and check env value.
 ```cpp
-   void cppConfig::def(std::vector<std::string>);
-   void cppConfig::def(std::string);
-   void cppConfig::def(std::string, std::string);
+   void cppConfig::def(std::map<std::string, std::string>);
 ```
 
 
