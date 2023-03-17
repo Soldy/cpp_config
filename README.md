@@ -4,13 +4,6 @@
 This is a simple config manager class for small projects.
 
 
-## def  
-define config variable and check env value.
-```cpp
-   void cppConfig::def(std::map<std::string, std::string>);
-```
-
-
 ## set
 Set a variable value.
 ```cpp
@@ -33,5 +26,13 @@ Get an integer value.
    int cppConfig::getInt(std::string, int);
 ```
 
-
-
+## import  
+set import
+```cpp
+   void cppConfig::import(std::map<std::string, std::string>);
+```
+## export 
+set export
+```cpp
+   std::map<std::string, std::string> cppConfig::export();
+```
