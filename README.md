@@ -29,10 +29,10 @@ Get an integer value.
 ## import  
 set import
 ```cpp
-   void cppConfig::import(std::map<std::string, std::string>);
+   void cppConfig::map(std::map<std::string, std::string>);
 ```
 ## export 
 set export
 ```cpp
-   std::map<std::string, std::string> cppConfig::export();
+   std::map<std::string, std::string> cppConfig::map();
 ```
