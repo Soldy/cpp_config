@@ -37,6 +37,12 @@ namespace cpp_config_tool {
         ){
             this->db[name] = val;
         };
+        std::map<std::string, std::string> map(){
+            std::map<std::string, std::string> out;
+            for(auto const & [name, val] : this->db)
+                out[name] = val;
+            return out;
+        };
       private:
         std::map<std::string, std::string> db;
     };
@@ -64,6 +70,9 @@ namespace cppConfig{
                 val
             );
         }
+    };
+    std::map<std::string, std::string> map(){
+        return cpp_config_sec::conf->map();
     };
     std::string get (const std::string name){
         return cpp_config_sec::conf->get(
