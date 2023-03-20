@@ -20,6 +20,6 @@ jobs:
     - name: get version
       run: g++ -v
     - name: compile
-      run: g++ -o test test.cpp -std=c++17
+      run: g++ -o test test.cpp -std=c++17 -Wall -Wextra
     - name: test
       run: ./test
