@@ -16,7 +16,7 @@ jobs:
     - name: configure
       run: sudo apt install -y gcc-10 curl
     - name: get doctest.h
-      run: curl https://raw.githubusercontent.com/onqtam/doctest/v2.4.8/doctest/doctest.h > doctest.h
+      run: curl https://raw.githubusercontent.com/onqtam/doctest/v2.4.9/doctest/doctest.h > doctest.h
     - name: get version
       run: g++ -v
     - name: compile
