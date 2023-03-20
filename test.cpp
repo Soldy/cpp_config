@@ -10,6 +10,13 @@ std::map<
     std::string
 > conf{{"two", "2"}, {"three", "3"}, {"four", "4"}};
 
+std::map<
+    std::string, 
+    std::string
+> conf_export;
+
+
+
 TEST_CASE("simple test") {
     SUBCASE("preparation") {
         cppConfig::set("one", "1");
@@ -39,16 +46,33 @@ TEST_CASE("simple test") {
     SUBCASE("get integer not exist with default") {
         CHECK(cppConfig::getInt("not exist", 2) == 2);
     };
-    SUBCASE("export") {
+    SUBCASE("import") {
         cppConfig::map(conf);
     };
-    SUBCASE("get export two") {
+    SUBCASE("get import two") {
         CHECK(cppConfig::get("two") == "2");
     };
-    SUBCASE("get export three") {
+    SUBCASE("get import three") {
         CHECK(cppConfig::get("three") == "3");
     };
-    SUBCASE("get export four") {
+    SUBCASE("get import four") {
         CHECK(cppConfig::get("four") == "4");
     };
+    SUBCASE("export") {
+        conf_export = cppConfig::map();
+    };
+    SUBCASE("get export one") {
+        CHECK(conf_export["one"] == "1");
+    };
+    SUBCASE("get export two") {
+        CHECK(conf_export["two"] == "2");
+    };
+    SUBCASE("get export three") {
+        CHECK(conf_export["three"] == "3");
+    };
+    SUBCASE("get export four") {
+        CHECK(conf_export["four"] == "4");
+    };
+
+
 };
